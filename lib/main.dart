@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
         routes: {
           HomePage.routeName: (context) => const HomePage(),
           FavouritesPage.routeName: (context) => const FavouritesPage(),
-          TodoPage.routeName: (context) => const TodoPage(),
+          TodoPage.routeName: (context) => TodoPage(),
         },
-        initialRoute: TodoPage.routeName,
+        initialRoute: HomePage.routeName,
       ),
     );
   }

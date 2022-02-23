@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:testing_app/providers/favourite_list_provider.dart';
+import 'package:testing_app/screens/todo.dart';
 
 import 'favourites.dart';
 
@@ -28,6 +29,12 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, TodoPage.routeName);
+        },
+        child: const Icon(Icons.list_alt),
       ),
       body: SingleChildScrollView(
         child: Column(
