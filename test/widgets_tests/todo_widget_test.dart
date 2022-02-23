@@ -20,14 +20,16 @@ void main() {
   group(
     "todo widget test:",
     () {
-      /// textfield widget test
-      testWidgets("text field test", (tester) async {
+      /// todo widget test
+      testWidgets("todo widget test", (tester) async {
         await tester.pumpWidget(createWidget(TodoPage()));
-        // await tester.enterText(find.byType(TextFormField), "test text 01");
-        // expect(find.text("test text 01"), findsOneWidget);
+        await tester.enterText(find.byType(TextFormField), "hello");
         await tester.tap(find.byType(ElevatedButton));
+        await tester.pump();
+        expect(find.text("hello"), findsOneWidget);
+        await tester.drag(find.byType(Dismissible), const Offset(500, 0));
         await tester.pumpAndSettle();
-        expect(find.text("field should not be empty"), findsOneWidget);
+        expect(find.text("hello"), findsNothing);
       });
     },
   );

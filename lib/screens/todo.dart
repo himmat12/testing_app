@@ -50,7 +50,10 @@ class TodoPage extends StatelessWidget {
                 background: Container(color: Colors.red),
                 secondaryBackground: Container(color: Colors.blue),
                 child: ListTile(
-                  title: Text(value.todoList[index]),
+                  title: Text(
+                    value.todoList[index],
+                    key: Key("text$index"),
+                  ),
                   trailing: IconButton(
                     onPressed: () => value.removeTodo(value.todoList[index]),
                     icon: const Icon(Icons.clear),
